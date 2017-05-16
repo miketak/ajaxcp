@@ -1,0 +1,47 @@
+﻿@model AjaxCDP.Models.Product
+
+@if (Model.ProdCode == null)
+{
+    <h1>Invalid Product Code</h1>
+}
+else
+{
+    <div>
+        <h4>Product</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ProdCode)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ProdCode)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ProdName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ProdName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ProdQty)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ProdQty)
+            </dd>
+
+        </dl>
+    </div>
+    @*<p>
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@
+}
+
+
+
+

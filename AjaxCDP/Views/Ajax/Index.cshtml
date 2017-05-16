@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts
+{
+    <script src="~/Scripts/jquery-3.1.1.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+}
+
+<h2>Index</h2>
+@using (Ajax.BeginForm("ShowDetails", "Ajax",
+    new AjaxOptions
+    {
+        HttpMethod = "POST",
+        UpdateTargetId = "div1",
+        InsertionMode = InsertionMode.Replace,
+        LoadingElementId = "waitimage"
+    }))
+{
+    <h1>Enter Product Code</h1>
+    <h2>
+        Product Code: @Html.TextBox("txtCode")<br />
+        <input type="submit" value="Show Details" />
+        <input type="reset" value="Reset" />
+    </h2>
+
+}
+
+<br/>
+<img id="waitimage" src="~/Images/loading42.gif" style="display: none" alt="loading"/>
+<br/>
+<div id="div1">
+
+</div>
